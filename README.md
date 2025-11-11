@@ -94,3 +94,135 @@ Keeping the logic inside the `src/` directory helps maintain:
    ```bash
    jupyter notebook notebooks/benin_eda.ipynb
    ```
+
+
+```markdown
+# 🌞 Solar Challenge – Week 0 (Challenge 3)
+
+This repository contains the **Week 0 submission** for the Solar Irradiance Data Pipeline Challenge.  
+The goal of this challenge is to **load, clean, and analyze solar irradiance datasets** for multiple West African regions — beginning with **Benin**, and later expanding to **Sierra Leone** and **Togo**.
+
+---
+
+## 📁 Repository Structure
+
+```
+
+solar-challenge-week0/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  # Continuous Integration setup
+│
+├── notebooks/
+│   ├── **init**.py
+│   ├── benin_eda.ipynb             # Data cleaning and exploration for Benin
+│   ├── sierra_leone_eda.ipynb      # (Template – coming soon)
+│   ├── togo_eda.ipynb              # (Template – coming soon)
+│   └── README.md                   # Notebook-level documentation
+│
+├── scripts/                        # Python scripts (if needed)
+│
+├── src/                            # Source code for modular data pipeline
+│
+├── tests/                          # Test scripts
+│
+├── venv/                           # Virtual environment (ignored by git)
+│
+├── data/
+│   ├── benin-malanville.csv         # Raw data
+│   ├── benin_clean.csv              # Cleaned data
+│   ├── sierra_leone_clean.csv       # Placeholder (to be added)
+│   ├── togo_clean.csv               # Placeholder (to be added)
+│   └── README.md                    # Data dictionary & notes
+│
+├── .gitignore
+├── requirements.txt
+└── README.md                       # ← you are here
+
+```
+
+---
+
+## 🧹 Task Breakdown
+
+### ✅ Task 1 – Benin Data Cleaning  
+- Loaded the **Benin (Malanville)** dataset  
+- Checked for **missing values, duplicates, and outliers**  
+- Converted timestamp columns to `datetime`  
+- Cleaned invalid or extreme irradiance readings  
+- Exported cleaned file as:  
+```
+
+data/benin_clean.csv
+
+````
+
+### 🔄 Task 2 – Prepare for Multi-Country Pipeline  
+- Created **template cleaning notebooks** for:
+- Sierra Leone → `notebooks/sierra_leone_eda.ipynb`
+- Togo → `notebooks/togo_eda.ipynb`
+- Added placeholder files:
+- `data/sierra_leone_clean.csv`
+- `data/togo_clean.csv`
+- Updated the **comparison notebook** to handle missing datasets gracefully
+
+---
+
+## 🧰 Setup Instructions
+
+1. **Clone the repository**
+ ```bash
+ git clone https://github.com/Isaacalex5371/solar-challenge-week1.git
+ cd solar-challenge-week1
+````
+
+2. **Create and activate a virtual environment**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate    # (Linux/Mac)
+   venv\Scripts\activate       # (Windows)
+   ```
+
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run notebooks**
+   Open any `.ipynb` file under `/notebooks/` using **VS Code** or **Jupyter Lab**.
+
+---
+
+## 🧪 CI Workflow
+
+GitHub Actions automatically runs:
+
+* Lint checks (`flake8`, `black`)
+* Notebook execution tests (using `pytest`)
+
+Defined under:
+
+```
+.github/workflows/ci.yml
+```
+
+---
+
+## 📊 Next Steps
+
+* Add raw datasets for **Sierra Leone** and **Togo**
+* Complete their cleaning and visualization notebooks
+* Merge all cleaned data for regional irradiance comparison
+
+---
+
+## 👨🏾‍💻 Author
+
+**Yishak Alemayehu (Isaacalex5371)**
+
+GitHub: [@Isaacalex5371](https://github.com/Isaacalex5371)
+
+---
